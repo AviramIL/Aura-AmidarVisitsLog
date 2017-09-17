@@ -1,0 +1,220 @@
+<h2>
+    סיום ביקור
+</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <div class="form-group">
+                    <label for="flooringRemarks">תאריך הביקור</label>
+                    <input type="text" class="form-control" name="visitDate" id="visitDate"
+                           aria-describedby="blockHelp"
+                           placeholder="תאריך הביקור">
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="form-group">
+                    <label for="flooringGrade">מבקר</label>
+                    <select class="form-control input-sm" name="flooringGrade" id="flooringGrade"
+                            aria-describedby="flooringGradeHelp">
+                        <option value="0" selected disabled>בחירת מבקר</option>
+                        <option value="1">נדלר אריאלה</option>
+                        <option value="2">ישראל ישראלי</option>
+                    </select>
+                    <span id="flooringGradeHelp" class="help-block"></span>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="row">
+                    <!--todo: ? -->
+                    <div class="col-md-8 col-xs-8">
+                        <div class="form-group">
+                            <label for="flooringRemarks">הביקור לא התקיים: סיבה</label>
+                            <select class="form-control input-sm" name="flooringGrade" id="flooringGrade"
+                                    aria-describedby="flooringGradeHelp">
+                                <option value="0" selected disabled>בחירת סיבה</option>
+                                <option value="1">דייר ביטל</option>
+                                <option value="2">דייר לא היה נוכח</option>
+                                <option value="3">אילוצים קודמים של מפקח</option>
+                            </select>
+                            <span id="flooringGradeHelp" class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="form-group">
+                            <label for="visitHour">שעה</label>
+                            <input type="text" class="form-control" name="visitHour" id="visitHour">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-4">
+                <div class="form-group">
+                    <label for="flooringRemarks">שפת הביקור</label>
+                    <select class="form-control input-sm" name="flooringGrade" id="flooringGrade"
+                            aria-describedby="flooringGradeHelp">
+                        <option value="0" selected disabled>בחירת שפה</option>
+                        <option value="1">(01) עברית</option>
+                        <option value="2">(02) אנגלית</option>
+                        <option value="3">(03) רוסית</option>
+                        <option value="4">(04) ערבית</option>
+                        <option value="5">(05) אחר</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3">
+                <div class="form-group">
+                    <label for="translator">נכח מתרגם</label>
+                    <select class="form-control input-sm" name="translator" id="translator"
+                            aria-describedby="translator">
+                        <option value="999" selected disabled>נכח מתרגם</option>
+                        <option value="1">כן</option>
+                        <option value="0">לא</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="form-group">
+                    <label for="flooringRemarks">שם מתרגם</label>
+                    <input type="text" class="form-control translator-data" name="block" id="block"
+                           aria-describedby="blockHelp"
+                           placeholder="שם מתרגם" disabled>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="form-group">
+                    <label for="flooringRemarks">מס' זיהוי</label>
+                    <input type="number" class="form-control translator-data" name="block" id="block"
+                           aria-describedby="blockHelp"
+                           placeholder="מס' זיהוי" disabled>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="waterHeatType" id="waterHeatType1" value="1"> הוחתם נתמך בוגר
+                </label>
+            </div>
+            <div class="col-xs-4">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="waterHeatType" id="waterHeatType1" value="1"> מסרב לחתום
+                </label>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="form-group">
+                    <label for="flooringRemarks">מהות הדייר הנוכח בדירה</label>
+                    <select class="form-control input-sm" name="flooringGrade" id="flooringGrade"
+                            aria-describedby="flooringGradeHelp">
+                        <option value="0" selected disabled>מהות הדייר הנוכח בדירה</option>
+                        <option value="1">לא רלוונטי</option>
+                        <option value="2">כן</option>
+                        <option value="3">לא</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="form-group">
+                    <label for="flooringRemarks">שם הדייר החותם</label>
+                    <input type="text" class="form-control" name="block" id="block"
+                           aria-describedby="blockHelp"
+                           placeholder="שם הדייר החותם">
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="form-group">
+                    <label class="bg-warning" for="flooringRemarks">חתימת לקוח</label>
+                    <input type="text" class="form-control lg" name="block" id="block"
+                           aria-describedby="blockHelp"
+                           placeholder="חתימת לקוח">
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="form-group">
+                    <label class="bg-warning" for="flooringRemarks">חתימת מת"ל</label>
+                    <input type="text" class="form-control lg" name="block" id="block"
+                           aria-describedby="blockHelp"
+                           placeholder='חתימת מח"ל'>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <label class="checkbox-inline" style="font-weight: 600">
+                    <input type="checkbox" name="waterHeatType" id="waterHeatType1" value="1"> אני מאשר שחתמתי וקראתי
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <hr>
+        <button type="button" class="btn btn-lg btn-danger btnApartmentDetailsActionsCancel" data-action="cancel">
+            <span class="glyphicon glyphicon-remove"></span> ביטול
+        </button>
+        <button type="button" class="btn btn-lg btn-success btnApartmentDetailsActionsSave" data-action="endOfVisitSave">
+            <span class="glyphicon glyphicon-ok"></span> שמירה
+        </button>
+    </div>
+
+    <div class="col-xs-12">
+        <br>
+        <div id="cuLoc"></div>
+    </div>
+</div>
+<script>
+    $('#visitDate').datepicker().datepicker("setDate", new Date());
+
+    var times = new Date();
+    $('#visitHour').timepicker({
+        defaultValue: times.getHours() + ':' + times.getMinutes(),
+        controlType: 'select',
+        afterInject: initTime()
+    });
+
+    function initTime() {
+        $('#visitHour').val(times.getHours() + ':' + times.getMinutes());
+    };
+
+
+    $('#translator').change(function () {
+        if ($("#translator option:selected").val() == 1) {
+            $('.translator-data').attr('disabled', false);
+        } else {
+            $('.translator-data').val('').attr('disabled', true);
+        }
+    });
+
+    var xLoc;
+
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert('דפדפן לא תומך בנתוני מיקום או שהמשתמש לא אפשר בדיקה זו')
+        }
+    }
+
+    getLocation();
+
+    var xLocLon, xLocLad;
+
+    function showPosition(position) {
+        xLocLon = position.coords.latitude;
+        xLocLad = position.coords.longitude;
+        getG();
+    }
+
+    function getG() {
+        url = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDgjenjZ9IFQ4OWHtfKhSzR6yEm47EOvKg&latlng=' + xLocLon + ',' + xLocLad + '&sensor=true';
+        e1 = $.getJSON(url, function () {
+        }).done(function () {
+            console.log("second success");
+            e2 = e1.responseJSON.results[0].formatted_address;
+            $('#cuLoc').html('מיקום נוכחי: ' + e2);
+        }).fail(function(jqxhr, textStatus, error) {
+            alert('שגיאה: ' + error + '-' + textStatus + '-' + jqxhr)
+        }).always(function() {
+        });
+    }
+
+
+</script>
+
+

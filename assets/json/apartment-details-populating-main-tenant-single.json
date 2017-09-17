@@ -1,0 +1,26 @@
+{
+  "success":true,
+  "Response":{
+    "avr_getAllPrimaryTenantsSuccess":true,
+    "avr_getAllPrimaryTenantsTableArray":{
+      "avr_getAllPrimaryTenantsArrayItem":[
+        {
+          "S_TENANT_ID_0":"0123456789",
+          "S_TENANT_NAME_0":"פנינה לוי",
+          "S_TENANT_GENDER_0":"נקבה",
+          "S_TENANT_DOB_0":"01/01/1960",
+          "S_TENANT_MARITAL_STATUS_0":"גרוש/ה",
+          "S_TENANT_WORK_0":"מאלפת אריות"
+        }
+      ]
+    },
+    "avr_getAllPrimaryTenantsElements":{
+
+    },
+    "avr_getAllPrimaryTenantsMessage":{
+      "Error":"",
+      "PopupMessages":"",
+      "StatusBarMessages":""
+    }
+  }
+}

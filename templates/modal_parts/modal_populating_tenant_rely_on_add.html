@@ -1,0 +1,87 @@
+<form id="tenantupdaterelyon" name="tenantupdaterelyon">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="idNumRelyOn">ת"ז נסמך</label>
+                    <input type="number" class="form-control" id="idNumRelyOn" name="idNumRelyOn">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="tenantNameRelyOn">שם נסמך</label>
+                    <input type="text" class="form-control" id="tenantNameRelyOn" name="tenantNameRelyOn">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <p>סוג קרבה</p>
+                    <label class="radio-inline">
+                        <input type="radio" name="tenantSingleRelyRelationType" id="tenantSingleRelyRelationTypeC" value="בן/בת">
+                        בן/בת
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="tenantSingleRelyRelationType" id="tenantSingleRelyRelationTypeB"
+                               value="אח/אחות">
+                        אח/ות
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="tenantSingleRelyRelationType" id="tenantSingleRelyRelationTypeP"
+                               value="אב/אם">
+                        הורה
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="tenantSingleRelyRelationType" id="tenantSingleRelyRelationTypeE"
+                               value="אחר">
+                        אחר
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <p>מצב משפחתי</p>
+                    <label class="radio-inline">
+                        <input type="radio" name="tenantStateSingleRelyOn" id="tenantStateSingleRelyOn" value="single">
+                        רווק/ה
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="tenantStateMarriedRelyOn" id="tenantStateMarriedRelyOn"
+                               value="married"> נשוי/אה
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="tenantStateDivorcedRelyOn" id="tenantStateDivorcedRelyOn"
+                               value="divorced"> גרוש/ה
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="tenantDOBRelyOn">תאריך לידה</label>
+                    <input type="text" class="form-control datepick" id="tenantDOBRelyOn" name="tenantDOBRelyOn">
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="tenantWorkRelyOn">עבודה</label>
+                    <input type="text" class="form-control" id="tenantWorkRelyOn" name="tenantWorkRelyOn">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span
+                class="glyphicon glyphicon-remove"></span>
+            ביטול
+        </button>
+        <button type="button" class="btn btn-success btn-update-modal" data-action="tenantupdaterelyon">עדכון</button>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+{
+  "success":true,
+  "Response":{
+    "avr_getAllPrimaryTenantsRelySuccess":true,
+    "avr_getAllPrimaryTenantsRelyTableArray":{
+      "avr_getAllPrimaryTenantsRelyArrayItem":[
+        {
+          "S_TENANT_RELY_ID_0":"85469523",
+          "S_TENANT_NAME_RELY_0":"נופר כהן",
+          "S_TENANT_RELATION_RELY_0":"בן/בת",
+          "S_TENANT_MARITAL_STATUS_RELY_0":"רווק/ה",
+          "S_TENANT_DOB_RELY_0":"01/01/1990",
+          "S_TENANT_WORK_RELY_0":"טייסת קרב"
+        }
+      ]
+    },
+    "avr_getAllPrimaryTenantsRelyElements":{
+
+    },
+    "avr_getAllPrimaryTenantsRelyMessage":{
+      "Error":"",
+      "PopupMessages":"",
+      "StatusBarMessages":""
+    }
+  }
+}

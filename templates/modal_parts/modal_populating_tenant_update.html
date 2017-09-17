@@ -1,0 +1,70 @@
+<form id="tenantupdate" name="tenantupdate">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="idNumUpdate">ת"ז</label>
+                    <input type="number" class="form-control" id="idNumUpdate" name="idNumUpdate">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="tenantNameUpdate">שם</label>
+                    <input type="text" class="form-control" id="tenantNameUpdate" name="tenantNameUpdate">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <p>מין</p>
+                    <!--
+                    todo: which values the GENDER field should holds- int(1) / string('male')
+                    -->
+                    <label class="radio-inline">
+                        <input type="radio" id="tenanMaleUpdate" name="tenantGenderUpdate" value="זכר"> זכר
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="tenanFemaleUpdate" name="tenantGenderUpdate" value="נקבה"> נקבה
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="tenantDOBUpdate">תאריך לידה</label>
+                    <input type="text" class="form-control datepick" id="tenantDOBUpdate" name="tenantDOBUpdate">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <p>מצב משפחתי</p>
+                    <label class="radio-inline">
+                        <input type="radio" id="tenantStateSingleUpdate" name="tenantStateUpdate" value="רווק/ה"> רווק/ה
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="tenantStateMarriedUpdate" name="tenantStateUpdate" value="נשוי/אה"> נשוי/אה
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="tenantStateDivorcedUpdate" name="tenantStateUpdate" value="גרוש/ה"> גרוש/ה
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="tenantWorkUpdate">עבודה</label>
+                    <input type="text" class="form-control" id="tenantWorkUpdate" name="tenantWorkUpdate">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span
+                class="glyphicon glyphicon-remove"></span>
+            ביטול
+        </button>
+        <button type="button" class="btn btn-success btn-update-modal">עדכון</button>
+    </div>
+</form>

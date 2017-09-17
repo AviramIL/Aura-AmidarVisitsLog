@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="utf-8">
+    <title>חיפוש | עמידר החדשה</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="ניהול ביקורים ונכסים מכל מקום">
+    <meta property="og:image" content="http://webops.co.il/amidar/assets/img/amidar-logo.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="theme-color" content="#006689">
+</head>
+<body>
+<div class="container-fluid">
+    <div id="applicationNavbar"></div>
+    <div class="row main-content">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-10 main-content-inner">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2><strong><span class="glyphicon glyphicon-search"></span> חיפוש</strong></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form id="formSearchScreen">
+                                <div class="well well-sm">
+                                    <legend>
+                                        יש לבחור מחוז וסניף תחילה על מנת לבצע חיפוש
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-xs-6">
+                                            <div class="form-group">
+                                                <label for="unit">מחוז</label>
+                                                <select class="form-control input-lg" name="unit" id="unit"
+                                                        aria-describedby="flooringGradeHelp">
+                                                    <option value="999" selected disabled>בחור מחוז מהרשימה</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-6">
+                                            <div class="form-group">
+                                                <label for="branch">סניף</label>
+                                                <select class="form-control input-lg" name="branch" id="branch"
+                                                        aria-describedby="flooringGradeHelp" disabled>
+                                                    <option value="999" selected disabled>בחר סניף מהרשימה</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+												<span class="help-block branchHelpBlock">
+                                                    בחר מחוז תחילה
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="coordinator">שם רכז</label>
+                                                <select class="form-control input-lg" name="coordinator"
+                                                        id="coordinator"
+                                                        aria-describedby="coordinator" disabled>
+                                                    <option value="999" selected disabled>בחר רכז מהרשימה</option>
+                                                    <option value="2">אריאלה נדלר</option>
+                                                    <option value="3">ישראל ישראלי</option>
+                                                    <option value="4">מוטי מנחם</option>
+                                                </select>
+                                                <span class="help-block">
+                                                    יש לבחור מחוז וסניף לבחירת שם רכז
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="searchApartmentBlock">שיכון</label>
+                                            <input type="number" class="form-control" name="searchApartmentBlock"
+                                                   id="searchApartmentBlock"
+                                                   placeholder="דוגמא: 2050">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="searchApartmentStructure">מבנה</label>
+                                            <input type="number" class="form-control" name="searchApartmentStructure"
+                                                   id="searchApartmentStructure" placeholder="דוגמא: 0172">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="searchApartmentEntrance">כניסה</label>
+                                            <input type="text" class="form-control" name="searchApartmentEntrance"
+                                                   id="searchApartmentEntrance" placeholder="דוגמא: 1, 'ג'">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label for="searchApartmentFlat">דירה</label>
+                                            <input type="number" class="form-control" name="searchApartmentFlat"
+                                                   id="searchApartmentFlat" placeholder="דוגמא: 018">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="searchApartmentCity">יישוב</label>
+                                                    <input type="text" class="form-control" name="searchApartmentCity"
+                                                           id="searchApartmentCity" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="searchApartmentStreet">רחוב</label>
+                                                    <input type="text" class="form-control" name="searchApartmentStreet"
+                                                           id="searchApartmentStreet" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label for="searchApartmentNumber">מספר</label>
+                                                    <input type="number" class="form-control"
+                                                           name="searchApartmentNumber"
+                                                           id="searchApartmentNumber" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-3 col-xs-4">
+                                        <div class="form-group">
+                                            <label for="searchID">ת״ז</label>
+                                            <input type="number" class="form-control" name="searchID" id="searchID">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-4">
+                                        <div class="form-group">
+                                            <label for="searchFirstName">שם פרטי</label>
+                                            <input type="text" class="form-control" name="searchFirstName"
+                                                   id="searchFirstName">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-4">
+                                        <div class="form-group">
+                                            <label for="searchLastName">שם משפחה</label>
+                                            <input type="text" class="form-control" name="searchLastName"
+                                                   id="searchLastName">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <hr>
+                                        <p>
+                                            <button type="button" class="btn btn-lg btn-danger btnCancelSearchScreen"
+                                                    id="btnCancelSearchDefault" data-action="cancel">
+                                                <span class="glyphicon glyphicon-remove"></span> ביטול
+                                            </button>
+                                            <button type="button" class="btn btn-lg btn-primary"
+                                                    id="btnSearchSearchDefault">
+                                                <span class="glyphicon glyphicon-search"></span> חיפוש
+                                            </button>
+                                        </p>
+                                        <p class="text-danger" id="searchValidationMsg"></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modalContainer"></div>
+<div id="modalWelcomeContainer"></div>
+<script src="assets/js/libraries/1_jquery/jquery-1.10.2.js"></script>
+<script src="assets/js/libraries/2_bootstrap/bootstrap.js"></script>
+<script src="assets/js/libraries/3_jcookie/jcookie.js"></script>
+<script src="assets/js/libraries/3_jstorage/jstorage.js"></script>
+<script src="assets/js/libraries/signature_pad/signature_pad.js"></script>
+<script src="assets/js/libraries/2_bootstrap/bootstrap_notify.js"></script>
+<!-- jQueryUI: todo: include only datepicker -->
+<script src="assets/jQueryUI/jquery-ui.js"></script>
+<script src="assets/jQueryUI/datepicker-he.js"></script>
+<script src="assets/jQueryUI/TimePicker/jquery-ui-timepicker-addon.js"></script>
+<script src="assets/jQueryUI/TimePicker/jquery-ui-timepicker-he.js"></script>
+<!--IMAGE HANDLING: todo: remove unneeded scripts-->
+<script src="assets/jQueryFileUpload/js/blueimp/tmpl.min.js"></script>
+<script src="assets/jQueryFileUpload/js/blueimp/load-image.all.min.js"></script>
+<script src="assets/jQueryFileUpload/js/blueimp/canvas-to-blob.min.js"></script>
+<script src="assets/jQueryFileUpload/js/blueimp/blueimp-gallery.min.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.iframe-transport.js"></script> <!-- TODO -->
+<script src="assets/jQueryFileUpload/js/jquery.fileupload.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-process.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-image.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-validate.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-ui.js"></script>
+<!--CUSTOM-->
+<script src="assets/js/0_main.js"></script>
+<script src="assets/js/3_search.js"></script>
+</body>
+</html>

@@ -1,0 +1,803 @@
+<h2 class="bg-warning">
+    אחזקה
+</h2>
+<div class="row">
+
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="text-center">
+                <button type="button" class="btn btn-info btn-lg maintenanceAction" data-action="status">
+                    <span class="glyphicon glyphicon-list-alt"></span>                     סטטוס קריאות
+                </button>
+                <button type="button" class="btn btn-primary btn-lg maintenanceAction" data-action="opencalls">
+                    <span class="glyphicon glyphicon-plus"></span> פתיחת קריאות
+                </button>
+                <button type="button" class="btn btn-info btn-lg maintenanceAction" data-action="pricing">
+                    <span class="glyphicon glyphicon-usd"></span> תמחור דירתי
+                </button>
+            </h3>
+
+            <!-- maintenance actions box -->
+            <div id="maintenanceActionBox"></div>
+            <!-- / maintenance actions box -->
+        </div>
+
+
+        <span class=""></span>
+        <div class="col-sm-12">
+            <small>
+                <strong class="bg-danger">
+                    * ציון 1-10 - שדה חובה
+                </strong>
+                <br>
+                <strong>
+                    1-3 לא ראוי למגורים,
+                    4-5 נדרש תיקון דחוף,
+                    6-7 סביר,
+                    8-10 טוב
+                </strong>
+            </small>
+        </div>
+        <div class="col-sm-12">
+            <small class="bg-danger">
+                <strong>
+                    ** חובה באם הציון נמוך או שווה ל-5
+                </strong>
+            </small>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12">
+    <p class="lead bg-info">ריצוף</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="flooring">*ציון</label>
+                <select class="form-control input-sm grade-select" name="flooring" id="flooring"
+                        aria-describedby="flooringGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="flooringGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="flooringDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="flooringDescription" id="flooringDescription" rows="2"
+                          aria-describedby="flooringDescriptionHelp"></textarea>
+                <span id="flooringDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="flooringRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="flooringRemarks" id="flooringRemarks" rows="2"
+                          aria-describedby="flooringRemarksHelp"></textarea>
+                <span id="flooringRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">דלת כניסה</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="entryDoor">*ציון</label>
+                <select class="form-control input-sm grade-select" name="entryDoor" id="entryDoor"
+                        aria-describedby="entryDoorGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="entryDoorGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="flooringDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="flooringDescription" id="entryDoorDescription" rows="2"
+                          aria-describedby="entryDoorDescriptionHelp"></textarea>
+                <span id="entryDoorDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="entryDoorRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="entryDoorRemarks" id="entryDoorRemarks" rows="2"
+                          aria-describedby="entryDoorRemarksHelp"></textarea>
+                <span id="entryDoorRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">ליקויי איטום (רטיבות)</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="sealing">*ציון</label>
+                <select class="form-control input-sm grade-select" name="sealing" id="sealing"
+                        aria-describedby="sealingGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="sealingGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="sealingDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="sealingDescription" id="sealingDescription" rows="2"
+                          aria-describedby="sealingDescriptionHelp"></textarea>
+                <span id="sealingDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="sealingRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="sealingRemarks" id="sealingRemarks" rows="2"
+                          aria-describedby="sealingRemarksHelp"></textarea>
+                <span id="sealingRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">מערכות וסורגים (תקינות ויציבות)</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="bars">*ציון</label>
+                <select class="form-control input-sm grade-select" name="bars" id="bars"
+                        aria-describedby="barsGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="barsGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="barsDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="barsDescription" id="barsDescription" rows="2"
+                          aria-describedby="barsDescriptionHelp"></textarea>
+                <span id="barsDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="barsRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="barsRemarks" id="barsRemarks" rows="2"
+                          aria-describedby="barsRemarksHelp"></textarea>
+                <span id="barsRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">מערכת חשמל כללי</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="electricity">*ציון</label>
+                <select class="form-control input-sm grade-select" name="electricity" id="electricity"
+                        aria-describedby="electricityGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="electricityGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="electricityDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="electricityDescription" id="electricityDescription" rows="2"
+                          aria-describedby="electricityDescriptionHelp"></textarea>
+                <span id="electricityDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="electricityRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="electricityRemarks" id="electricityRemarks" rows="2"
+                          aria-describedby="electricityRemarksHelp"></textarea>
+                <span id="electricityRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">נזילות מצנרת (מטבח, מקלחת וכו')</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="flooring">*ציון</label>
+                <select class="form-control input-sm grade-select" name="flooring" id="fluid"
+                        aria-describedby="fluidGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="fluidGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="fluidDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="fluidDescription" id="fluidDescription" rows="2"
+                          aria-describedby="fluidDescriptionHelp"></textarea>
+                <span id="fluidDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="fluidRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="fluidRemarks" id="fluidRemarks" rows="2"
+                          aria-describedby="fluidRemarksHelp"></textarea>
+                <span id="fluidRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">דלתות פנים</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="flooring">*ציון</label>
+                <select class="form-control input-sm grade-select" name="flooring" id="inDoors"
+                        aria-describedby="inDoorsGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="inDoorsGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="inDoorsDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="inDoorsDescription" id="inDoorsDescription" rows="2"
+                          aria-describedby="inDoorsDescriptionHelp"></textarea>
+                <span id="inDoorsDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="inDoorsRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="inDoorsRemarks" id="inDoorsRemarks" rows="2"
+                          aria-describedby="inDoorsRemarksHelp"></textarea>
+                <span id="inDoorsRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">דלתות, שירותים ומקלחת</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="flooring">*ציון</label>
+                <select class="form-control input-sm grade-select" name="flooring" id="doorsPlusShower"
+                        aria-describedby="doorsPlusShowerGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="doorsPlusShowerGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="doorsPlusShowerDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="doorsPlusShowerDescription" id="doorsPlusShowerDescription"
+                          rows="2"
+                          aria-describedby="doorsPlusShowerDescriptionHelp"></textarea>
+                <span id="doorsPlusShowerDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="doorsPlusShowerRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="doorsPlusShowerRemarks" id="doorsPlusShowerRemarks" rows="2"
+                          aria-describedby="doorsPlusShowerRemarksHelp"></textarea>
+                <span id="doorsPlusShowerRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">חלונות</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="windows">*ציון</label>
+                <select class="form-control input-sm grade-select" name="windows" id="windows"
+                        aria-describedby="windowsGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="windowsGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="windowsDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="windowsDescription" id="windowsDescription" rows="2"
+                          aria-describedby="windowsDescriptionHelp"></textarea>
+                <span id="windowsDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="windowsRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="windowsRemarks" id="windowsRemarks" rows="2"
+                          aria-describedby="windowsRemarksHelp"></textarea>
+                <span id="windowsRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">תריסים</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="blinds">*ציון</label>
+                <select class="form-control input-sm grade-select" name="blinds" id="blinds"
+                        aria-describedby="blindsGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="blindsGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="blindsDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="blindsDescription" id="blindsDescription" rows="2"
+                          aria-describedby="blindsDescriptionHelp"></textarea>
+                <span id="blindsDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="blindsRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="blindsRemarks" id="blindsRemarks" rows="2"
+                          aria-describedby="blindsRemarksHelp"></textarea>
+                <span id="blindsRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">מטבח (מצב כללי)</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="kitchen">*ציון</label>
+                <select class="form-control input-sm grade-select" name="kitchen" id="kitchen"
+                        aria-describedby="kitchenGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="kitchenGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="kitchenDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="kitchenDescription" id="kitchenDescription" rows="2"
+                          aria-describedby="kitchenDescriptionHelp"></textarea>
+                <span id="kitchenDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="kitchenRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="kitchenRemarks" id="kitchenRemarks" rows="2"
+                          aria-describedby="kitchenRemarksHelp"></textarea>
+                <span id="kitchenRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">שירותים (מצב כללי)</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="bathroom">*ציון</label>
+                <select class="form-control input-sm grade-select" name="bathroom" id="bathroom"
+                        aria-describedby="bathroomGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="bathroomGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="bathroomDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="bathroomDescription" id="bathroomDescription" rows="2"
+                          aria-describedby="bathroomDescriptionHelp"></textarea>
+                <span id="bathroomDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="bathroomRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="bathroomRemarks" id="bathroomRemarks" rows="2"
+                          aria-describedby="bathroomRemarksHelp"></textarea>
+                <span id="bathroomRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">מקלחת (מצב כללי)</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="shower">*ציון</label>
+                <select class="form-control input-sm grade-select" name="shower" id="shower"
+                        aria-describedby="showerGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="showerGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="showerDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="showerDescription" id="showerDescription" rows="2"
+                          aria-describedby="showerDescriptionHelp"></textarea>
+                <span id="showerDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="showerRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="showerRemarks" id="showerRemarks" rows="2"
+                          aria-describedby="showerRemarksHelp"></textarea>
+                <span id="showerRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">מצב דירה כללי</p>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="apartmentGeneral">*ציון</label>
+                <select class="form-control input-sm grade-select" name="apartmentGeneral"
+                        id="apartmentGeneral"
+                        aria-describedby="apartmentGeneralGradeHelp">
+                    <option value="999" selected disabled>בחר/י ציון</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="apartmentGeneralGradeHelp" class="help-block"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="apartmentGeneralDescription">**תאור הליקוי </label>
+                <textarea class="form-control" name="apartmentGeneralDescription" id="apartmentGeneralDescription"
+                          rows="2"
+                          aria-describedby="apartmentGeneralDescriptionHelp"></textarea>
+                <span id="apartmentGeneralDescriptionHelp" class="help-block help-block-desc"></span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="apartmentGeneralRemarks">הערות/פעולות שנעשו</label>
+                <textarea class="form-control" name="apartmentGeneralRemarks" id="apartmentGeneralRemarks" rows="2"
+                          aria-describedby="apartmentGeneralRemarksHelp"></textarea>
+                <span id="apartmentGeneralRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <div class="form-group">
+        <label for="waterHeatType">סוג חימום מים</label>
+        <select class="form-control input-sm grade-select" name="waterHeatType"
+                id="waterHeatType"
+                aria-describedby="waterHeatTypeHelp">
+            <option value="999" selected disabled>בחר/י סוג</option>
+            <option value="1">חימום על גז</option>
+            <option value="2">הסקה מרכזית</option>
+            <option value="3">דוד שמש מרכזי</option>
+            <option value="4">דוד שמש דירתי</option>
+            <option value="5">דוד חשמל</option>
+            <option value="6">מכשיר אטמור</option>
+            <option value="7">הסקה מרכזית ודוד חשמל</option>
+            <option value="8">הסקה מרכזית ודוד שמש</option>
+        </select>
+        <span id="waterHeatTypeHelp" class="help-block"></span>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">ממסר פחת (בדיקה פיזית בלוח)</p>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <p><strong>מצב</strong></p>
+                <label class="radio-inline">
+                    <input type="radio" name="relayDepreciation" id="relayDepreciation1" value="1"> תקין
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="relayDepreciation" id="relayDepreciation0" value="0"> לא תקין
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="relayDepreciationRemarks">הערות</label>
+                <textarea class="form-control" name="relayDepreciationRemarks" id="relayDepreciationRemarks" rows="2"
+                          aria-describedby="relayDepreciationRemarksHelp"></textarea>
+                <span id="relayDepreciationRemarksHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">חריגות בנייה (יש לפרט בהערות)</p>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <p><strong>מצב</strong></p>
+                <label class="radio-inline">
+                    <input type="radio" name="buildingIrregularities" id="buildingIrregularities0" value="0"> יש
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="buildingIrregularities" id="buildingIrregularities1" value="1"> אין
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="buildingIrregularitiesDescription">הערות</label>
+                <textarea class="form-control" name="buildingIrregularitiesDescription"
+                          id="buildingIrregularitiesDescription" rows="2"
+                          aria-describedby="buildingIrregularitiesDescriptionHelp"></textarea>
+                <span id="buildingIrregularitiesDescriptionHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <p class="lead bg-info">סוג חימום מים נוסף</p>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <p><strong>מצב</strong></p>
+                <label class="radio-inline">
+                    <input type="radio" name="additionalWaterHeatingType" id="additionalWaterHeatingType1" value="1"> יש
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="additionalWaterHeatingType" id="additionalWaterHeatingType0" value="0">
+                    אין
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="additionalWaterHeatingTypeDescription">הערות</label>
+                <textarea class="form-control" name="additionalWaterHeatingTypeDescription"
+                          id="additionalWaterHeatingTypeDescription" rows="2"
+                          aria-describedby="additionalWaterHeatingTypeHelp"></textarea>
+                <span id="additionalWaterHeatingTypeHelp" class="help-block"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-sm-3">
+            <p class="lead bg-info">מחסן דירתי</p>
+
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="warehouse" id="warehouse1" value="1"> יש
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="warehouse" id="warehouse0" value="0"> אין
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <p class="lead bg-info">ממ"ד/חדר ביטחון</p>
+
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="safeRoom" id="safeRoom1" value="1"> יש
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="safeRoom" id="safeRoom0" value="0"> אין
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="lead bg-info" for="commonPropertyDisturbances">ליקויים בולטים/בטיחותיים ברכוש
+                    המשותף</label>
+                <textarea class="form-control" name="commonPropertyDisturbances" id="commonPropertyDisturbances"
+                          rows="2"
+                          aria-describedby="commonPropertyDisturbancesHelp"></textarea>
+                <span id="commonPropertyDisturbancesHelp" class="help-block">                יש להוסיף ולרשום בטופס כל ליקוי חמור שהתגלה ועלול להיות סכנה בטיחותית ו/או לגרום לנזק חמור ומצטבר.</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12">
+    <hr>
+    <button type="button" class="btn btn-lg btn-danger btnApartmentDetailsActionsCancel" data-action="cancel">
+        <span class="glyphicon glyphicon-remove"></span> ביטול
+    </button>
+    <button type="button" class="btn btn-lg btn-success btnApartmentDetailsActionsSave" data-action="maintenanceSave">
+        <span class="glyphicon glyphicon-ok"></span> שמירה
+    </button>
+</div>
+</div>

@@ -1,0 +1,79 @@
+<h2 class="bg-warning">
+    נטישה
+</h2>
+<div class="row">
+
+    <div class="col-sm-3 col-xs-6">
+        <div class="form-group">
+            <label for="leaveDate">תאריך נטישה</label>
+            <input type="text" class="form-control datepick"
+                   name="leaveDate"
+                   id="leaveDate">
+        </div>
+    </div>
+
+
+    <div class="col-sm-3 col-xs-6">
+        <div class="form-group">
+            <label for="leaveCodeType">
+                סוג נטישה
+            </label>
+            <select class="form-control input-sm" name="leaveCodeType" id="leaveCodeType">
+                <option value="999" selected disabled>בחר/י סוג נטישה</option>
+                <option value="01">
+                    (01) נטישה
+                </option>
+                <option value="02">
+                    (02) נטישה מפלישה
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+    <div class="row" style="margin-bottom: 20px">
+        <div class="col-xs-12">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="waterHeatType" id="waterHeatType1" value="1">
+                שעון מים
+            </label>
+        </div>
+        <div class="col-xs-12">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="waterHeatType" id="waterHeatType1" value="1">
+                דירה פרוצה
+            </label>
+        </div>
+        <div class="col-xs-12">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="waterHeatType" id="waterHeatType1" value="1">
+                שעון חשמל
+            </label>
+        </div>
+    </div>
+    </div>
+    
+	
+    
+	
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label for="flooringRemarks">הערות</label>
+            <textarea class="form-control" name="flooringRemarks" id="flooringRemarks" rows="2"
+                      aria-describedby="flooringRemarksHelp"></textarea>
+            <span id="flooringRemarksHelp" class="help-block"></span>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <hr>
+        <button type="button" class="btn btn-lg btn-danger btnApartmentDetailsActionsCancel" data-action="cancel">
+            <span class="glyphicon glyphicon-remove"></span> ביטול
+        </button>
+        <button type="button" class="btn btn-lg btn-success btnApartmentDetailsActionsSave" data-action="livedAloneSave">
+            <span class="glyphicon glyphicon-ok"></span> שמירה
+        </button>
+    </div>
+</div>
+<script>
+    $('#leaveDate').datepicker();
+</script>

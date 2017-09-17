@@ -1,0 +1,97 @@
+<div id="userBox">
+    שלום!
+    <span id="currentCoordinator"></span>
+    <br><br>
+    חטיבה:
+    <span id="currentUnit"></span>
+    <br>
+    סניף:
+    <span id="currentBranch"></span>
+    <br>
+    יום עבודה:
+    <span id="currentDate"></span>
+    <br>
+    <br>
+    <button class="btn btn-xs btn-danger" id="logout">התנתק</button>
+</div>
+<div class="modal fade" id="amidarModalWelcome" tabindex="-1" role="dialog" aria-labelledby="amidarModalWelcome">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title text-center welcome">
+                    מערכת יומן ביקורים
+                    <small>
+                        (בפיתוח)
+                    </small>
+                </h1>
+            </div>
+            <div class="modal-body">
+                <h2>
+                    ברוכ/ה הבא/ה!
+                </h2>
+                <p class="lead">
+                    כדי לשייך את עצמך למערכת, ולהתחיל לצפות במשימות היומיות, אנא מלא את שלושת השדות הבאים:
+                </p>
+
+                <form name="loginForm">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="form-group">
+                                <label for="loginUnit">מחוז</label>
+                                <select class="form-control input-lg" name="loginUnit" id="loginUnit">
+                                    <option value="999" selected disabled>בחור מחוז</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-6">
+                            <div class="form-group">
+                                <label for="loginBranch">סניף</label>
+                                <select class="form-control input-lg" name="loginBranch" id="loginBranch" disabled>
+                                    <option value="999" selected disabled>בחר סניף</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span class="help-block">
+                                                    בחר מחוז תחילה
+                                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-xs-12">
+                            <div class="form-group">
+                                <label for="loginCoordinator">שם רכז</label>
+                                <select class="form-control input-lg" name="loginCoordinator"
+                                        id="loginCoordinator" disabled>
+                                    <option value="999" selected disabled>בחר רכז מהרשימה</option>
+                                    <option value="אריאלה נדלר">אריאלה נדלר</option>
+                                    <option value="ישראל ישראלי">ישראל ישראלי</option>
+                                    <option value="מוטי מנחם">מוטי מנחם</option>
+                                </select>
+                                <span class="help-block">
+                                                    יש לבחור מחוז וסניף
+                                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-primary btn-lg btn-block" id="loginBtn" disabled>
+                                <span class="glyphicon glyphicon-user"></span> התחברות
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <p class="text-danger">
+                    <small>
+                        המערכת כרגע בשלבי פיתוח ולכן
+                        פונקציות שונות עשויות שלא לפעול כמצופה.
+                        עימכם הסליחה.
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+<h2 class="bg-warning">
+    אכלוס
+</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <p class="lead bg-info">
+            משתכן ראשי עם בן/בת זוג
+            -
+            <small id="populatingTenantCount"></small>
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>פעולות</th>
+                    <th>ת"ז</th>
+                    <th>שם</th>
+                    <th>מין</th>
+                    <th>תאריך לידה</th>
+                    <th>מצב משפחתי</th>
+                    <th>עבודה</th>
+                </tr>
+                </thead>
+                <tbody id="tbodyPopulatingTenant">
+                </tbody>
+            </table>
+        </div>
+        <p class="lead bg-info">
+            נסמכים
+            -
+            <small id="populatingTenantRelyCount"></small>
+        </p>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>פעולות</th>
+                    <th>ת"ז</th>
+                    <th>שם</th>
+                    <th>סוג קרבה</th>
+                    <th>מצב משפחתי</th>
+                    <th>תאריך לידה</th>
+                    <th>עבודה</th>
+                </tr>
+                </thead>
+                <tbody id="tbodyPopulatingTenantRely"></tbody>
+            </table>
+        </div>
+        <p>
+            <br>
+            <button type="button" class="btn btn-default" data-toggle="modal"
+                    data-target="#amidarModal" data-modalcontent="populatingTenantChildAdd"><span
+                    class="glyphicon glyphicon-plus"></span>
+                הוספת נסמך
+            </button>
+        </p>
+        <p class="lead bg-info">
+            פרטי אכלוס כלליים
+        </p>
+
+        <div class="row">
+            <div class="col-sm-3 col-sm-4">
+                <div class="form-group">
+                    <label for="block">טלפון דירה</label>
+                    <input type="tel" class="form-control" name="block" id="block"
+                           aria-describedby="blockHelp">
+                </div>
+            </div>
+            <div class="col-sm-3 col-sm-4">
+                <div class="form-group">
+                    <label for="block">טלפון נייד</label>
+                    <input type="tel" class="form-control" name="block" id="block"
+                           aria-describedby="blockHelp">
+                </div>
+            </div>
+            <div class="col-sm-3 col-sm-4">
+                <div class="form-group">
+                    <label for="block">דואר אלקטרוני</label>
+                    <input type="email" class="form-control" name="block" id="block"
+                           aria-describedby="blockHelp">
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="block">הערות</label>
+                    <textarea class="form-control" name="flooringDescription" id="flooringDescription" rows="3"
+                              aria-describedby="flooringDescriptionHelp"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-sm-4">
+                <p>הסכמה לעבור דירה</p>
+
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> כן
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> לא
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-sm-4">
+                <p>החלה בניית תמ"א</p>
+
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="assetUpgrade" id="assetUpgrade1" value="1"> כן
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="assetUpgrade" id="assetUpgrade2" value="0"> לא
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="assetUpgrade" id="assetUpgrade3" value="999"> לא ידוע
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <hr>
+        <button type="button" class="btn btn-lg btn-danger btnApartmentDetailsActionsCancel" data-action="cancel">
+            <span class="glyphicon glyphicon-remove"></span> ביטול
+        </button>
+        <button type="button" class="btn btn-lg btn-success btnApartmentDetailsActionsSave">
+            <span class="glyphicon glyphicon-ok"></span> שמירה
+        </button>
+    </div>
+</div>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="utf-8">
+    <title>פרטי דירה | עמידר החדשה</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="ניהול ביקורים ונכסים מכל מקום">
+    <meta property="og:image" content="http://webops.co.il/amidar/assets/img/amidar-logo.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <!-- todo: jqueryui -->
+    <link rel="stylesheet" href="assets/jQueryUI/jquery-ui.css">
+    <link rel="stylesheet" href="assets/jQueryUI/jquery-ui.structure.css">
+    <link rel="stylesheet" href="assets/jQueryUI/jquery-ui.theme.css">
+    <link rel="stylesheet" href="assets/jQueryUI/TimePicker/jquery-ui-timepicker-addon.css">
+    <!-- todo: blueimp -->
+    <link rel="stylesheet" href="assets/jQueryFileUpload/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="assets/jQueryFileUpload/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="assets/jQueryFileUpload/css/jquery.fileupload-ui.css">
+    <!-- CSS adjustments for browsers with JavaScript disabled -->
+    <noscript><link rel="stylesheet" href="assets/jQueryFileUpload/css/jquery.fileupload-noscript.css"></noscript>
+    <noscript><link rel="stylesheet" href="assets/jQueryFileUpload/css/jquery.fileupload-ui-noscript.css"></noscript>
+    <!-- todo -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="theme-color" content="#006689">
+</head>
+<body>
+<div class="container-fluid">
+    <div id="applicationNavbar"></div>
+    <div class="row main-content">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-10 main-content-inner">
+
+
+                    <!-- collapsePopulating -->
+                    <div class="panel panel-default collapse-panel">
+                        <div class="panel-heading">
+                            <h2>
+                                <a role="button" data-toggle="collapse" href="#collapsePopulating">
+                                    <strong><span class="glyphicon glyphicon-home"></span>
+                                        פרטי זיהוי
+                                    </strong>
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="collapsePopulating" class="panel-collapse collapse in panelCollapseDefault">
+                            <div class="panel-body">
+                                <form id="idInForm" name="idInForm">
+                                    <!-- IdentificationBlock-->
+                                    <div class="row">
+                                        <div class="col-sm-2 col-xs-3">
+                                            <div class="form-group">
+                                                <label for="tenantName">שם דייר</label>
+                                                <input type="text" class="form-control input-sm form-control-label"
+                                                       name="tenantName"
+                                                       id="tenantName" value="ישראל ישראלי" disabled>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-10 col-xs-12">
+                                            <div class="row row-float-left-sm-cols">
+                                                <div class="col-sm-1 col-xs-2">
+                                                    <div class="form-group">
+                                                        <label for="adIdentificationDistrict">מחוז</label>
+                                                        <input type="text"
+                                                               class="form-control input-sm form-control-label"
+                                                               name="adIdentificationDistrict"
+                                                               id="adIdentificationDistrict" value="5" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label for="branch">סניף</label>
+                                                        <input type="number"
+                                                               class="form-control input-sm form-control-label"
+                                                               name="branch"
+                                                               id="branch" value="64" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label for="blockBlock">שיכון</label>
+                                                        <input type="number"
+                                                               class="form-control input-sm form-control-label"
+                                                               name="blockBlock"
+                                                               id="blockBlock" value="2050" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label for="blockBlock">מבנה</label>
+                                                        <input type="number"
+                                                               class="form-control input-sm form-control-label"
+                                                               name="blockBlock"
+                                                               id="blockBlock" value="0172" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label for="blockEntrance">כניסה</label>
+                                                        <input type="text"
+                                                               class="form-control input-sm form-control-label"
+                                                               name="blockEntrance"
+                                                               id="blockEntrance" value="ג" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 col-xs-3">
+                                                    <div class="form-group">
+                                                        <label for="blockApartment">דירה</label>
+                                                        <input type="number"
+                                                               class="form-control input-sm form-control-label"
+                                                               name="blockApartment"
+                                                               id="blockApartment" value="018" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- / IdentificationBlock-->
+                                    <!-- active address -->
+                                    <div class="row">
+                                        <div class="col-sm-3 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="Area">יישוב</label>
+                                                <input type="text" class="form-control input-sm form-control-label"
+                                                       name="Area"
+                                                       id="Area" value="חולון" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="idInStreet">רחוב</label>
+                                                <input type="text" class="form-control input-sm"
+                                                       name="idInStreet"
+                                                       id="idInStreet" value="הערבה">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-2">
+                                            <div class="form-group">
+                                                <label for="house">בית</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="house"
+                                                       id="house" value="00012" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-2">
+                                            <div class="form-group">
+                                                <label for="idInApartmentNumber">מס' דירה</label>
+                                                <input type="number" class="form-control input-sm"
+                                                       name="idInApartmentNumber"
+                                                       id="idInApartmentNumber" value="018">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-2">
+                                            <div class="form-group">
+                                                <label for="zipCode">מיקוד</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="zipCode"
+                                                       id="zipCode" value="58423" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- / active address -->
+                                    <div class="row">
+                                        <div class="col-sm-2 col-xs-3">
+                                            <div class="form-group">
+                                                <label for="populatingState">מצב אכלוס</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="populatingState"
+                                                       id="populatingState" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="populatingDate">תאריך אכלוס</label>
+                                                <input type="text" class="form-control input-sm form-control-label"
+                                                       name="populatingDate"
+                                                       id="populatingDate" value="09/05/2017" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-3">
+                                            <div class="form-group">
+                                                <label for="numberOfRooms">מס' חדרים</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="numberOfRooms"
+                                                       id="numberOfRooms" value="2" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-3">
+                                            <div class="form-group">
+                                                <label for="Area">שטח</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="Area"
+                                                       id="Area" value="60" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-3">
+                                            <div class="form-group">
+                                                <label for="numberOfPeople">מס' נפשות</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="numberOfPeople"
+                                                       id="numberOfPeople" value="3" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-3">
+                                            <div class="form-group">
+                                                <label for="numberOfMinors">מס' ילדים עד גיל 21</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="numberOfMinors"
+                                                       id="numberOfMinors" value="0" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" name="idInConfirm" id="idInConfirm"
+                                                           value="1">
+                                                    <strong>
+                                                        בדקתי את הדירה ואני מאשר את הנתונים
+                                                    </strong>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <button type="button" class="btn btn-lg btn-success btnGeneralUpdate" id="idInUpdate"
+                                                    data-action="idInUpdate">
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                                עדכון
+                                            </button>
+                                            <br>
+                                            <p class="text-danger" id="idInMsg"></p>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / collapsePopulating -->
+
+
+                    <!-- collapseCollection -->
+                    <div class="panel panel-default collapse-panel">
+                        <div class="panel-heading">
+                            <h2>
+                                <a role="button" data-toggle="collapse" href="#collapseCollection">
+                                    <strong><span class="glyphicon glyphicon-usd"></span> גביה</strong>
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="collapseCollection" class="panel-collapse collapse in panelCollapseDefault">
+                            <div class="panel-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="accountNumber">מספר חשבון</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="accountNumber"
+                                                       id="accountNumber" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="netRent">שכ"ד נטו</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="netRent"
+                                                       id="netRent" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="calculatedGross">ברוטו</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="calculatedGross"
+                                                       id="calculatedGross" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="primaryDiscountType">סוג הנחה ראשי</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="primaryDiscountType"
+                                                       id="primaryDiscountType" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="finishDate">תאריך סיום</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="finishDate"
+                                                       id="finishDate" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="collectionMethod">אמצעי גביה</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="collectionMethod"
+                                                       id="collectionMethod" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="totalFutureDebt">סה"כ חוב</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="totalFutureDebt"
+                                                       id="totalFutureDebt" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="balanceOfDebtInArrangement">יתרת חוב בהסדר</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="balanceOfDebtInArrangement"
+                                                       id="balanceOfDebtInArrangement" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="balanceOfDebtInArrangement">סוג שכ"ד</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="balanceOfDebtInArrangement"
+                                                       id="balanceOfDebtInArrangement" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2 col-xs-4">
+                                            <div class="form-group">
+                                                <label for="balanceOfDebtInArrangement">חוב בתביעה</label>
+                                                <input type="number" class="form-control input-sm form-control-label"
+                                                       name="balanceOfDebtInArrangement"
+                                                       id="balanceOfDebtInArrangement" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / collapseCollection -->
+                    <!-- collapseActions -->
+                    <div class="panel panel-default collapse-panel">
+                        <div class="panel-heading">
+                            <h2>
+                                <a role="button" data-toggle="collapse" href="#collapseActions">
+                                    <strong><span class="glyphicon glyphicon-edit"></span> פעולות</strong>
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="collapseActions" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div class="row actions-buttons">
+                                    <div class="col-md-3 col-xs-4">
+                                        <button type="button"
+                                                class="btn btn-block btn-primary btnApartmentDetailsActions"
+                                                data-action="maintenance">
+                                            <span class="glyphicon glyphicon-wrench"></span> אחזקה
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-xs-4">
+                                        <button type="button"
+                                                class="btn btn-block btn-primary btnApartmentDetailsActions"
+                                                data-action="populating">
+                                            <span class="glyphicon glyphicon-home"></span> אכלוס
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-xs-4">
+                                        <button type="button"
+                                                class="btn btn-block btn-primary btnApartmentDetailsActions"
+                                                data-action="liveAlone">
+                                            <span class="glyphicon glyphicon-user"></span> גר בגפו
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-xs-4">
+                                        <button type="button"
+                                                class="btn btn-block btn-primary btnApartmentDetailsActions"
+                                                data-action="prefabricatedBuilding">
+                                            <span class="glyphicon glyphicon-flag"></span> מבנה טרומי
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-xs-4">
+                                        <button type="button"
+                                                class="btn btn-block btn-primary btnApartmentDetailsActions"
+                                                data-action="pictures">
+                                            <span class="glyphicon glyphicon-picture"></span> תמונות
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-xs-4">
+                                        <button type="button"
+                                                class="btn btn-block btn-primary btnApartmentDetailsActions"
+                                                data-action="leave">
+                                            <span class="glyphicon glyphicon-plane"></span> נטישה
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-xs-4">
+                                        <button type="button"
+                                                class="btn btn-block btn-primary btnApartmentDetailsActions"
+                                                data-action="invade">
+                                            <span class="glyphicon glyphicon-alert"></span> פלישה
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button type="button"
+                                                class="btn btn-block btn-lg btn-success btnApartmentDetailsActions"
+                                                data-action="endOfVisit">
+                                            <span class="glyphicon glyphicon-ok"></span> סיום ביקור
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <hr>
+                                        <div id="divApartmentDetailsActions">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / collapseActions -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modalContainer"></div>
+<div id="modalWelcomeContainer"></div>
+<script src="assets/js/libraries/1_jquery/jquery-1.10.2.js"></script>
+<script src="assets/js/libraries/2_bootstrap/bootstrap.js"></script>
+<script src="assets/js/libraries/3_jcookie/jcookie.js"></script>
+<script src="assets/js/libraries/3_jstorage/jstorage.js"></script>
+<script src="assets/js/libraries/signature_pad/signature_pad.js"></script>
+<script src="assets/js/libraries/2_bootstrap/bootstrap_notify.js"></script>
+<!-- jQueryUI: todo: include only datepicker -->
+<script src="assets/jQueryUI/jquery-ui.js"></script>
+<script src="assets/jQueryUI/datepicker-he.js"></script>
+<script src="assets/jQueryUI/TimePicker/jquery-ui-timepicker-addon.js"></script>
+<script src="assets/jQueryUI/TimePicker/jquery-ui-timepicker-he.js"></script>
+<!--IMAGE HANDLING: todo: remove unneeded scripts-->
+<script src="assets/jQueryFileUpload/js/blueimp/tmpl.min.js"></script>
+<script src="assets/jQueryFileUpload/js/blueimp/load-image.all.min.js"></script>
+<script src="assets/jQueryFileUpload/js/blueimp/canvas-to-blob.min.js"></script>
+<script src="assets/jQueryFileUpload/js/blueimp/blueimp-gallery.min.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.iframe-transport.js"></script> <!-- TODO -->
+<script src="assets/jQueryFileUpload/js/jquery.fileupload.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-process.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-image.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-validate.js"></script>
+<script src="assets/jQueryFileUpload/js/jquery.fileupload-ui.js"></script>
+<!--CUSTOM-->
+<script src="assets/js/0_main.js"></script>
+<script src="assets/js/4_apartment_details.js"></script>
+</body>
+</html>
