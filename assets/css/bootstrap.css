@@ -1,3 +1,4 @@
+/*
 @font-face {
   font-family: 'Open Sans Hebrew Condensed';
   font-style: normal;
@@ -12,7 +13,7 @@
   font-weight: 600;
   src: url('/general_assets/fonts/OpenSansHebrewCondensed/OpenSansHebrewCondensed-Bold.ttf') format('truetype');
 }
-
+*/
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
