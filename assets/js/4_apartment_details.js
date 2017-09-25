@@ -1,7 +1,55 @@
 // screen is available only when there's a visitsLog PARAM AT THE URL
 function appendPageTitle(navBarTitleParam) {
-    global.currentVisitsLog = getUrlParameter('visitsLog');
-    if (
+    var shikun, mivne, knisa, dira, apartmentDetailsParams;
+
+    function appendApartmentDetailsOn(data) {
+        $('#spinner').addClass('appHide');
+        resultsArray = data.Response.app_getAppartmentFullDetailsElements;
+
+        // Pirtey Zihuy
+        $('#apName').val(resultsArray.CICL_SHEM_0);
+        $('#apDira').val(resultsArray.DIRAT_AMID_DIRA_0);
+        $('#apKnisa').val(resultsArray.DIRAT_AMID_KNISA_0);
+        $('#apMivne').val(resultsArray.DIRAT_AMID_MIVNE_0);
+        $('#apShikun').val(resultsArray.DIRAT_AMID_SHIKUN_0);
+        $('#apSnif').val(resultsArray.DIRAT_AMID_MERCHAV_0);
+        $('#apMahoz').val(resultsArray.DIRAT_AMID_MACHOZ_0);
+        $('#apYeshuv').val(resultsArray.DIRAT_AMID_DSP_SHEM_MERCHAV_0);
+        $('#apStreet').val(resultsArray.CICL_SCR_RECHOV_0);
+        $('#apBait').val(resultsArray.CICL_SCR_MIS_BAIT_0);
+        $('#apMisparDira').val(resultsArray.DIRAT_AMID_DIRA_0);
+        $('#apMikud').val(resultsArray.CICL_SCR_MIKUD_0);
+        $('#apMazavIchlus').val(resultsArray.CICL_MATZAV_DIRA_0);
+        $('#taarichIchlus').val(resultsArray.CICL_SCR_TAR_TCHILAT_MATZAV_0);
+        $('#misparHadarim').val(resultsArray.CICL_SCR_MIS_CHADARIM_0);
+        $('#apShetach').val(resultsArray.CICL_SCR_SHETACH_0);
+        $('#misparNefashot').val(resultsArray.CICL1_SCR_MIS_NEFASHOT_0);
+        $('#apMisparYeladim21').val(resultsArray.CICL1_SCR_MIS_YELADIM_AD21_0);
+
+        // Mazav Cheshbon
+        $('#apMisparCheshbon').val(resultsArray.CICL_SCR_MISPAR_CHESHBON_0);
+        $('#apScharDiraNeto').val( '-' ); // todo
+        $('#apBruto').val(resultsArray.SCHAD_BRUTO_SCHAD_BRUTO_0);
+        $('#apSugHanachaRashi').val(resultsArray.SCHAD_BRUTO_SUG_HANACHA_RASHI_0);
+        $('#apTaarichSiyum').val(resultsArray.SCHAD_BRUTO_TAARICH_TOKEF_0);
+        $('#apEmzaiGvia').val(resultsArray.CICL1_SCR_KOD_EMTZAYI_GVIYA_0 + '-' + resultsArray.CICL1_SCR_TEUR_EMTZAYI_GVIYA_0);
+        $('#apSachHov').val(resultsArray.SCHAD_BRUTO_SCR_TOTAL_HOV_MUKPE_0);
+        $('#apItratHovBeesder').val(resultsArray.CHESHBONOT_SCR_CHOV_HESDER_0);
+        $('#apSugScharDira').val( resultsArray.SCHAD_BRUTO_SUG_SCHAR_DIRA_0 + '-' + resultsArray.SCHAD_BRUTO_DSP_TEUR_SCHAR_DIRA_0 );
+        $('#apHovBetvia').val('-'); // todo
+    }
+
+    shikun = getUrlParameter('CICL_SCR_SHIKUN_0');
+    mivne = getUrlParameter('CICL_SCR_MIVNE_0');
+    knisa = getUrlParameter('CICL_SCR_KNISA_0');
+    dira = getUrlParameter('CICL_SCR_DIRA_0');
+
+    apartmentDetailsParams = '?CICL_SCR_SHIKUN_0=' + shikun + '&CICL_SCR_MIVNE_0=' + mivne + '&CICL_SCR_KNISA_0=' + knisa + '&CICL_SCR_DIRA_0=' + dira;
+    ajaxReq('app_getAppartmentFullDetails', 'GET', appendApartmentDetailsOn, apartmentDetailsParams);
+
+    /*
+    todo
+	if (
         global.currentVisitsLog === ''
         ||
         typeof(global.currentVisitsLog) === 'undefined'
@@ -10,99 +58,75 @@ function appendPageTitle(navBarTitleParam) {
     } else {
         navBarTitleParam.html('<span class="glyphicon glyphicon-info-sign"></span>פרטי דירה, <small>ביקור מספר<strong> ' + global.currentVisitsLog + '</strong></small>')
     }
-}
+    */
 
-$(document).ready(function () {
-    var
-        $idInForm, $idInStreet, $idInApartmentNumber, $idInConfirm,
-        $idInUpdate, $idInMsg, idInValidationText,
+    $apPirteyZihuiForm = $('#apPirteyZihuiForm');
+    $apStreet = $('#apStreet');
+    $apMisparDira = $('#apMisparDira');
+    $apRakazConfirm = $('#apRakazConfirm');
+    $apUpdate = $('#apUpdate');
+    $apMsg = $('#apMsg');
+    apInValidationText = 'ודא כי הרחוב ומספר הדירה מכילים ערכים תקינים, וכן כי בדקת את הדירה ואישרת את הנתונים';
 
-        $btnApartmentDetailsActions, $divApartmentDetailsActions, $panelCollapseDefault;
-
-    // idInForm
-    $idInForm = $('#idInForm');
-    $idInStreet = $('#idInStreet');
-    $idInApartmentNumber = $('#idInApartmentNumber');
-    $idInConfirm = $('#idInConfirm');
-    $idInUpdate = $('#idInUpdate');
-    $idInMsg = $('#idInMsg');
-    idInValidationText = 'ודא כי הרחוב ומספר הדירה מכילים ערכים תקינים, וכן כי בדקת את הדירה ואישרת את הנתונים';
-
-    $idInUpdate.click(function (e) {
+    $apUpdate.click(function (e) {
         if (
-            $idInStreet.val().length > 2 &&
-            $idInApartmentNumber.val().length !== '' &&
-            $idInConfirm.is(':checked')
+            $apStreet.val().length > 2 &&
+            $apMisparDira.val().length !== '' &&
+            $apRakazConfirm.is(':checked')
         ) {
-            $idInMsg.text('');
-            ajaxReq('undefined.json', 'POST', false, $idInForm.serialize());
-            $idInConfirm.prop('checked', false);
+            $apMsg.text('');
+            ajaxReq('undefined.json', 'POST', false, $apPirteyZihuiForm.serialize());
+            $apRakazConfirm.prop('checked', false);
         } else {
-            $idInMsg.text(idInValidationText);
+            $apMsg.text(apInValidationText);
             e.preventDefault();
         }
+    });
+
+    // collapse the above panels
+    $panelCollapseDefault = $('.panelCollapseDefault');
+    $btnCollapseApActions = $('.btnCollapseApActions').click(function () {
+        $panelCollapseDefault.collapse('hide');
+    });
+
+    // hide the other sub panels
+    var $apCollapseParts, $apCancelAction, $actionCollapse;
+    $actionCollapse = $('.actionCollapse');
+    $apCollapseParts = $('#apCollapseParts').on('show.bs.collapse', '.collapse', function () {
+
+        $apCollapseParts.find('.collapse.in').collapse('hide');
+
+        $apCancelAction = $('.apCancelAction').click(function(){
+            // collapse the current panel when hitting cancel
+            $actionCollapse.removeClass('in');
+        });
 
     });
 
+    $('#visitDate').datepicker().datepicker("setDate", new Date());
 
-    $divApartmentDetailsActions = $('#divApartmentDetailsActions').html('<h4>לחץ על אחד מהכפתורים מעלה לפעולה המבוקשת</h4>');
-    $panelCollapseDefault = $('.panelCollapseDefault');
+    var times = new Date();
+    $('#visitHour').timepicker({
+        defaultValue: times.getHours() + ':' + times.getMinutes(),
+        controlType: 'select',
+        afterInject: initTime()
+    });
 
-    $btnApartmentDetailsActions = $('.btnApartmentDetailsActions').click(function () {
-        var $this, apartmentDetailsActions;
+    function initTime() {
+        $('#visitHour').val(times.getHours() + ':' + times.getMinutes());
+    }
 
-        $panelCollapseDefault.collapse('hide');
-        $this = $(this);
-        $btnApartmentDetailsActions.attr("disabled", false);
-        $this.attr("disabled", true);
-        apartmentDetailsActions = $this.data('action');
-        // todo: remove time param on prod- NOW IT'S ONLY FOR CACHING PURPOSES
-        var currentTime = new Date().getTime();
-        $divApartmentDetailsActions.load("templates/apartment-details/tmp_" + apartmentDetailsActions + ".html?time=" + currentTime, function () {
 
-            //todo ASAP!!!!! CALL THE FUNCTION JUST FROM THE DATA ATTRIBUTE INSTEAD OF THIS....
-            switch (apartmentDetailsActions) {
-                case 'maintenance':
-                    maintenance();
-                    break;
-                case 'populating':
-                    populating();
-                    break;
-                case 'liveAlone':
-                    liveAlone();
-                    break;
-                case 'prefabricatedBuilding':
-                    prefabricatedBuilding();
-                    break;
-                case 'pictures':
-                    pictures();
-                    break;
-                case 'leave':
-                    leave();
-                    break;
-                case 'invade':
-                    invade();
-                    break;
-                case 'endOfVisit':
-                    endOfVisit();
-                    break;
-            }
-
-            var $btnApartmentDetailsActionsCancel;
-            $btnApartmentDetailsActionsCancel = $('.btnApartmentDetailsActionsCancel').click(function () {
-                $btnApartmentDetailsActions.attr("disabled", false);
-                $divApartmentDetailsActions.html('<h4>לחץ על אחד מהכפתורים מעלה לפעולה המבוקשת</h4>');
-            });
-
-            $('.datepick').each(function () {
-                $(this).datepicker();
-            });
-
-        });
+    $('#translator').change(function () {
+        if ($("#translator option:selected").val() == 1) {
+            $('.translator-data').attr('disabled', false);
+        } else {
+            $('.translator-data').val('').attr('disabled', true);
+        }
     });
 
     /* ***********************************************************************************************************************
-     maintenance
+     apPartAchzaka
      *********************************************************************************************************************** */
     function maintenance() {
         var $gradeSelect, mandatoryText, $maintenanceAction, $maintenanceActionBox;
@@ -418,7 +442,61 @@ $(document).ready(function () {
      *********************************************************************************************************************** */
     function endOfVisit() {
 
+        $('#visitDate').datepicker().datepicker("setDate", new Date());
+
+        var times = new Date();
+        $('#visitHour').timepicker({
+            defaultValue: times.getHours() + ':' + times.getMinutes(),
+            controlType: 'select',
+            afterInject: initTime()
+        });
+
+        function initTime() {
+            $('#visitHour').val(times.getHours() + ':' + times.getMinutes());
+        };
+
+
+        $('#translator').change(function () {
+            if ($("#translator option:selected").val() == 1) {
+                $('.translator-data').attr('disabled', false);
+            } else {
+                $('.translator-data').val('').attr('disabled', true);
+            }
+        });
+
+        var xLoc;
+
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert('דפדפן לא תומך בנתוני מיקום או שהמשתמש לא אפשר בדיקה זו')
+            }
+        }
+
+        getLocation();
+
+        var xLocLon, xLocLad;
+
+        function showPosition(position) {
+            xLocLon = position.coords.latitude;
+            xLocLad = position.coords.longitude;
+            getG();
+        }
+
+        function getG() {
+            url = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDgjenjZ9IFQ4OWHtfKhSzR6yEm47EOvKg&latlng=' + xLocLon + ',' + xLocLad + '&sensor=true';
+            e1 = $.getJSON(url, function () {
+            }).done(function () {
+                e2 = e1.responseJSON.results[0].formatted_address;
+                $('#cuLoc').html('מיקום נוכחי: ' + e2);
+            }).fail(function (jqxhr, textStatus, error) {
+                alert('שגיאה: ' + error + '-' + textStatus + '-' + jqxhr)
+            }).always(function () {
+            });
+        }
+
     }
 
-});
-
+};

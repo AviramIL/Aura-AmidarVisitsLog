@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         var $divVisitLogBox, $divMapBox, $btnToggleMap, $spanViewMapText;
 
-        ajaxReq('visit-log.json', 'GET', appendAllCustomers, '');
+        ajaxReq('app_getVisitsLog', 'GET', appendAllCustomers, '');
 
         locations = [];
 
@@ -95,11 +95,13 @@ $(document).ready(function () {
             resultsLength = resultsArray.length;
             $visitsLogCount.html(resultsLength + ' ביקורים נמצאו');
 
+// CICL_SCR_SHIKUN_0=##CICL_SCR_SHIKUN_0##&CICL_SCR_MIVNE_0=##CICL_SCR_MIVNE_0##&CICL_SCR_KNISA_0=##CICL_SCR_KNISA_0##&CICL_SCR_DIRA_0=##CICL_SCR_DIRA_0
+
             for (i = 0; i < resultsLength; i++) {
-                // todo: determine what's the right visit log
-                sVisitID = resultsArray[i].V_YOMAN_BIKUR_SHIKUN_0 + '-' + resultsArray[i].V_YOMAN_BIKUR_MIVNE_0;
-                r[++j] = '<tr class="visitsLog" data-visitslog="' + sVisitID + '" title="צפיה בפרטי דירה">';
-                r[++j] = '<th scope="row">';
+                                
+				r[++j] = '<tr class="visitsLog" data-shikun="' + resultsArray[i].V_YOMAN_BIKUR_SHIKUN_0 + '" data-mivne="' + resultsArray[i].V_YOMAN_BIKUR_MIVNE_0 + '" data-knisa="' + resultsArray[i].V_YOMAN_BIKUR_KNISA_0 + '" data-dira="' + resultsArray[i].V_YOMAN_BIKUR_DIRA_0 + '" title="צפיה בפרטי דירה">';
+                
+				r[++j] = '<th scope="row">';
                 r[++j] = '<a class="visitsLogMapView" role="button" data-street="' + resultsArray[i].V_YOMAN_BIKUR_SHEM_RECHOV_0 + '" data-city="' + resultsArray[i].V_YOMAN_BIKUR_SHEM_ISHUV_0 + '">';
                 r[++j] = '<img src="assets/img/icon.png"/>';
                 r[++j] = '</a>';
@@ -112,14 +114,11 @@ $(document).ready(function () {
                 r[++j] = '<td>';
                 r[++j] = resultsArray[i].V_YOMAN_BIKUR_MIVNE_0;
                 r[++j] = '</td>';
-                r[++j] = '<td>';
+				r[++j] = '<td>';
                 r[++j] = resultsArray[i].V_YOMAN_BIKUR_KNISA_0;
-                r[++j] = '</td>';
-                r[++j] = '<td>';
+                r[++j] = '</td>';                
+				r[++j] = '<td>';
                 r[++j] = resultsArray[i].V_YOMAN_BIKUR_DIRA_0;
-                r[++j] = '</td>';
-                r[++j] = '<td>';
-                r[++j] = resultsArray[i].V_YOMAN_BIKUR_SHEM_0;
                 r[++j] = '</td>';
                 r[++j] = '<td>';
                 r[++j] = resultsArray[i].V_YOMAN_BIKUR_SHEM_ISHUV_0;
@@ -131,10 +130,14 @@ $(document).ready(function () {
                 r[++j] = resultsArray[i].V_YOMAN_BIKUR_MIS_BAIT_0;
                 r[++j] = '</td>';
                 r[++j] = '<td>';
+                r[++j] = resultsArray[i].V_YOMAN_BIKUR_SHEM_0;
+                r[++j] = '</td>';
+                r[++j] = '<td>';
                 r[++j] = resultsArray[i].V_YOMAN_BIKUR_SHAAT_BIKUR_0;
                 r[++j] = '</td>';
-                r[++j] = '<td class="bg-danger">';
-                r[++j] = 'יש להוסיף לטופס';
+                r[++j] = '<td>';
+                //r[++j] = 'יש להוסיף לטופס';
+                r[++j] = '';
                 r[++j] = '</td>';
                 r[++j] = '</tr>';
                 appendLocation(
@@ -157,12 +160,19 @@ $(document).ready(function () {
                 return false;
             });
 
-            // go to search screen
+            // go to search screen, PARAMS: shikun mivne knisa dira			
             $VisitsLog = $('.visitsLog').click(function () {
-                var visitsLog, $this;
-                $this = $(this);
-                visitsLog = $this.data('visitslog');
-                window.location.replace(global.applicationRootURL + "apartment-details.html" + "?" + "visitsLog=" + visitsLog);
+                var $this,
+					shikun, mivne, knisa, dira;
+                
+				$this = $(this);
+                
+				shikun = $this.data('shikun');
+				mivne = $this.data('mivne');
+				knisa = $this.data('knisa');
+				dira = $this.data('dira');
+
+				window.location.replace('apartment-details.html'+'?'+'CICL_SCR_SHIKUN_0='+shikun+'&'+'CICL_SCR_MIVNE_0='+mivne+'&'+'CICL_SCR_KNISA_0='+knisa+'&'+'CICL_SCR_DIRA_0='+dira);
             });
 
 
@@ -207,7 +217,7 @@ $(document).ready(function () {
                     },
                     error: function () {
                         // todo
-                        alert('error while getting lat lang from Google!');
+                        //alert('error while getting lat lang from Google!');
                     }
                 });
                 return false;
@@ -220,7 +230,7 @@ $(document).ready(function () {
             $this = $(this);
             visitLogAction = $this.data('action');
             if (visitLogAction == 'search') {
-                window.location.replace(global.applicationRootURL + "search.html");
+                window.location.replace("search.html");
             }
         });
 
