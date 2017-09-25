@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <meta name="theme-color" content="#006689">
 </head>
 <body>
@@ -21,6 +21,9 @@
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-lg-offset-1 col-lg-10 main-content-inner">
+
+
+                    <!-- SEARCH PANEL -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h2><strong><span class="glyphicon glyphicon-search"></span> חיפוש</strong></h2>
@@ -34,45 +37,32 @@
                                     <div class="row">
                                         <div class="col-sm-3 col-xs-6">
                                             <div class="form-group">
-                                                <label for="unit">מחוז</label>
-                                                <select class="form-control input-lg" name="unit" id="unit"
-                                                        aria-describedby="flooringGradeHelp">
-                                                    <option value="999" selected disabled>בחור מחוז מהרשימה</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
+                                                <label for="V_YOMAN_BIKUR_MACHOZ_0">מחוז</label>
+                                                <select class="form-control input-lg" name="V_YOMAN_BIKUR_MACHOZ_0"
+                                                        id="V_YOMAN_BIKUR_MACHOZ_0">
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-xs-6">
                                             <div class="form-group">
-                                                <label for="branch">סניף</label>
-                                                <select class="form-control input-lg" name="branch" id="branch"
-                                                        aria-describedby="flooringGradeHelp" disabled>
-                                                    <option value="999" selected disabled>בחר סניף מהרשימה</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
+                                                <label for="V_YOMAN_BIKUR_MERCHAV_0">סניף</label>
+                                                <select class="form-control input-lg" name="V_YOMAN_BIKUR_MERCHAV_0"
+                                                        id="V_YOMAN_BIKUR_MERCHAV_0"
+                                                        aria-describedby="V_YOMAN_BIKUR_MERCHAV_0_HELP" disabled>
                                                 </select>
-												<span class="help-block branchHelpBlock">
+                                                <span class="help-block" id="V_YOMAN_BIKUR_MERCHAV_0_HELP">
                                                     בחר מחוז תחילה
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="col-sm-5 col-xs-12">
                                             <div class="form-group">
-                                                <label for="coordinator">שם רכז</label>
-                                                <select class="form-control input-lg" name="coordinator"
-                                                        id="coordinator"
-                                                        aria-describedby="coordinator" disabled>
-                                                    <option value="999" selected disabled>בחר רכז מהרשימה</option>
-                                                    <option value="2">אריאלה נדלר</option>
-                                                    <option value="3">ישראל ישראלי</option>
-                                                    <option value="4">מוטי מנחם</option>
+                                                <label for="V_YOMAN_BIKUR_SHEM_RAKAZ_0">שם רכז</label>
+                                                <select class="form-control input-lg" name="V_YOMAN_BIKUR_SHEM_RAKAZ_0"
+                                                        id="V_YOMAN_BIKUR_SHEM_RAKAZ_0"
+                                                        aria-describedby="V_YOMAN_BIKUR_SHEM_RAKAZ_0_HELP" disabled>
                                                 </select>
-                                                <span class="help-block">
+                                                <span class="help-block" id="V_YOMAN_BIKUR_SHEM_RAKAZ_0_HELP">
                                                     יש לבחור מחוז וסניף לבחירת שם רכז
                                                 </span>
                                             </div>
@@ -82,90 +72,87 @@
                                 <div class="row">
                                     <div class="col-sm-2">
                                         <div class="form-group">
-                                            <label for="searchApartmentBlock">שיכון</label>
-                                            <input type="number" class="form-control" name="searchApartmentBlock"
-                                                   id="searchApartmentBlock"
+                                            <label for="V_YOMAN_BIKUR_SHIKUN_0">שיכון</label>
+                                            <input type="text" class="form-control" name="V_YOMAN_BIKUR_SHIKUN_0"
+                                                   id="V_YOMAN_BIKUR_SHIKUN_0"
                                                    placeholder="דוגמא: 2050">
                                         </div>
                                     </div>
                                     <div class="col-sm-2">
                                         <div class="form-group">
-                                            <label for="searchApartmentStructure">מבנה</label>
-                                            <input type="number" class="form-control" name="searchApartmentStructure"
-                                                   id="searchApartmentStructure" placeholder="דוגמא: 0172">
+                                            <label for="V_YOMAN_BIKUR_MIVNE_0">מבנה</label>
+                                            <input type="text" class="form-control" name="V_YOMAN_BIKUR_MIVNE_0"
+                                                   id="V_YOMAN_BIKUR_MIVNE_0" placeholder="דוגמא: 0172">
                                         </div>
                                     </div>
                                     <div class="col-sm-2">
                                         <div class="form-group">
-                                            <label for="searchApartmentEntrance">כניסה</label>
-                                            <input type="text" class="form-control" name="searchApartmentEntrance"
-                                                   id="searchApartmentEntrance" placeholder="דוגמא: 1, 'ג'">
+                                            <label for="V_YOMAN_BIKUR_KNISA_0">כניסה</label>
+                                            <input type="text" class="form-control" name="V_YOMAN_BIKUR_KNISA_0"
+                                                   id="V_YOMAN_BIKUR_KNISA_0" placeholder="דוגמא: 1, 'ג'">
                                         </div>
                                     </div>
                                     <div class="col-sm-2">
                                         <div class="form-group">
-                                            <label for="searchApartmentFlat">דירה</label>
-                                            <input type="number" class="form-control" name="searchApartmentFlat"
-                                                   id="searchApartmentFlat" placeholder="דוגמא: 018">
+                                            <label for="V_YOMAN_BIKUR_DIRA_0">דירה</label>
+                                            <input type="text" class="form-control" name="V_YOMAN_BIKUR_DIRA_0"
+                                                   id="V_YOMAN_BIKUR_DIRA_0" placeholder="דוגמא: 018">
                                         </div>
                                     </div>
                                     <div class="col-xs-12">
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="form-group">
-                                                    <label for="searchApartmentCity">יישוב</label>
-                                                    <input type="text" class="form-control" name="searchApartmentCity"
-                                                           id="searchApartmentCity" placeholder="">
+                                                    <label for="V_YOMAN_BIKUR_SHEM_ISHUV_0">יישוב</label>
+                                                    <input type="text" class="form-control"
+                                                           name="V_YOMAN_BIKUR_SHEM_ISHUV_0"
+                                                           id="V_YOMAN_BIKUR_SHEM_ISHUV_0" placeholder="">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label for="searchApartmentStreet">רחוב</label>
-                                                    <input type="text" class="form-control" name="searchApartmentStreet"
-                                                           id="searchApartmentStreet" placeholder="">
+                                                    <label for="V_YOMAN_BIKUR_SHEM_RECHOV_0">רחוב</label>
+                                                    <input type="text" class="form-control"
+                                                           name="V_YOMAN_BIKUR_SHEM_RECHOV_0"
+                                                           id="V_YOMAN_BIKUR_SHEM_RECHOV_0" placeholder="">
                                                 </div>
                                             </div>
                                             <div class="col-sm-2">
                                                 <div class="form-group">
-                                                    <label for="searchApartmentNumber">מספר</label>
-                                                    <input type="number" class="form-control"
-                                                           name="searchApartmentNumber"
-                                                           id="searchApartmentNumber" placeholder="">
+                                                    <label for="V_YOMAN_BIKUR_MIS_BAIT_0">מספר</label>
+                                                    <input type="text" class="form-control"
+                                                           name="V_YOMAN_BIKUR_MIS_BAIT_0"
+                                                           id="V_YOMAN_BIKUR_MIS_BAIT_0" placeholder="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-
                                     <div class="col-sm-3 col-xs-4">
                                         <div class="form-group">
-                                            <label for="searchID">ת״ז</label>
-                                            <input type="number" class="form-control" name="searchID" id="searchID">
+                                            <label for="V_YOMAN_BIKUR_SHEM_0">שם דייר (שם מלא)</label>
+                                            <input type="text" class="form-control" name="V_YOMAN_BIKUR_SHEM_0"
+                                                   id="V_YOMAN_BIKUR_SHEM_0">
                                         </div>
                                     </div>
+                                    <!--
+                                    TODO:
                                     <div class="col-sm-3 col-xs-4">
                                         <div class="form-group">
-                                            <label for="searchFirstName">שם פרטי</label>
-                                            <input type="text" class="form-control" name="searchFirstName"
-                                                   id="searchFirstName">
+                                            <label for="seID">ת״ז</label>
+                                            <input type="text" class="form-control" name="seID" id="seID">
                                         </div>
                                     </div>
-                                    <div class="col-sm-3 col-xs-4">
-                                        <div class="form-group">
-                                            <label for="searchLastName">שם משפחה</label>
-                                            <input type="text" class="form-control" name="searchLastName"
-                                                   id="searchLastName">
-                                        </div>
-                                    </div>
+                                    -->
                                     <div class="col-xs-12">
                                         <hr>
                                         <p>
-                                            <button type="button" class="btn btn-lg btn-danger btnCancelSearchScreen"
+                                            <button type="button" class="btn btn-lg btn-danger seBtnCancel"
                                                     id="btnCancelSearchDefault" data-action="cancel">
                                                 <span class="glyphicon glyphicon-remove"></span> ביטול
                                             </button>
                                             <button type="button" class="btn btn-lg btn-primary"
-                                                    id="btnSearchSearchDefault">
+                                                    id="seBtnSearch">
                                                 <span class="glyphicon glyphicon-search"></span> חיפוש
                                             </button>
                                         </p>
@@ -175,6 +162,38 @@
                             </form>
                         </div>
                     </div>
+                    <!-- /SEARCH PANEL -->
+
+
+                    <!-- RESULTS PANEL -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p id="VisitsLogSECount"></p>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>שיכון</th>
+                                        <th>מבנה</th>
+                                        <th>כניסה</th>
+                                        <th>דירה</th>
+                                        <th>יישוב</th>
+                                        <th>רחוב</th>
+                                        <th>מספר</th>
+                                        <th>שם דייר</th>
+                                        <th>שעה</th>
+                                        <th>הערות</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tbodyse">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / RESULTS PANEL -->
+
+
                 </div>
             </div>
         </div>
